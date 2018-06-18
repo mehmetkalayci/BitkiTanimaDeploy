@@ -43,7 +43,7 @@
 				<br>
 				<h3>API Kullanım</h3>
 				<h4>curl</h4>
-				<code>curl -X POST -F image=@resim1.jpg 'https://plant-recognation.herokuapp.com/predict'</code>
+				<code>curl -X POST -F image=@resim1.jpg 'https://bitki-tanima-projesi.herokuapp.com/predict'</code>
 				<h4>API Cevap</h4>
 				<code>
 						{
@@ -112,7 +112,7 @@
 			var form_data = new FormData($('#upload-file')[0]);
 			$.ajax({
 				type: 'POST',
-				url: '/save',
+				url: '/predict',
 				data: form_data,
 				contentType: false,
 				cache: false,
