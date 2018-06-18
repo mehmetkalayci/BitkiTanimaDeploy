@@ -31,10 +31,9 @@ def predict():
 		img_pred = image.img_to_array(image)
 		img_pred = np.expand_dims(img_pred, axis = 0)
 		result = model.predict(img_pred)
-		
 		data["result"] = result[0][0]
 		data["result_str"] = 'Tahmin: {}'.format("Lale" if result[0][0]==1 else "Papatya"
-	return jsonify(data)
+		return jsonify(data)
 
 @app.route('/')
 def index():
