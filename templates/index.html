@@ -121,13 +121,7 @@
 				success: function (data) {
 					console.log(data.success);
 					$('.loader').hide();
-					$.each(data.predictions, function (i, item) {
-						console.log(item);
-						label = item["label"];
-						prob = item["probability"].toFixed(2);
-						percent = prob * 100;
-						$("#results").append('<label>' + percent + '% ' + label + '</label><div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="' + percent + '" aria-valuemin="0" aria-valuemax="100" style="width:' + percent + '%"></div></div>');
-					});
+					$("#results").append('<div>' + data + '</div>');
 				},
 			});
 		});
