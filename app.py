@@ -33,7 +33,7 @@ def predict():
 		result = model.predict(img_pred)
 		data["result"] = result[0][0]
 		data["result_str"] = 'Tahmin: {}'.format("Lale" if result[0][0]==1 else "Papatya"
-		return jsonify(data)
+	return jsonify(data)
 
 @app.route('/')
 def index():
