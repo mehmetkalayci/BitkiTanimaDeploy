@@ -34,9 +34,7 @@ def predict():
 		
 		data["result"] = result[0][0]
 		data["result_str"] = 'Tahmin: {}'.format("Lale" if result[0][0]==1 else "Papatya"
-	# return the data dictionary as a JSON response
 	return jsonify(data)
-
 
 @app.route('/')
 def index():
