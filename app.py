@@ -32,29 +32,30 @@ def prepare_image(image, target):
 def predict():
 	# initialize the data dictionary that will be returned from the
 	# view
-	data = {"success": False}
+	# data = {"success": False}
 
-	# ensure an image was properly uploaded to our endpoint
-	if request.method == "POST" and request.files['image']:
-		image = flask.request.files["image"].read()
-		image = Image.open(io.BytesIO(image))
+	# # ensure an image was properly uploaded to our endpoint
+	# if request.method == "POST" and request.files['image']:
+	# 	image = flask.request.files["image"].read()
+	# 	image = Image.open(io.BytesIO(image))
 		
-		image = prepare_image(image, target=(150, 150))
-		# indicate that the request was a success
-		data["success"] = True
+	# 	image = prepare_image(image, target=(150, 150))
+	# 	# indicate that the request was a success
+	# 	data["success"] = True
 		
-		result = model.predict(image)
+	# 	result = model.predict(image)
 		
-		data["class"] = str(result[0][0])
+	# 	data["class"] = str(result[0][0])
 		
-		if result[0][0] == 1:
-			data["class_str"] = "Lale"
-		elif result[0][0] == 0:
-			data["class_str"] = "Papatya"
-		else:
-			data["class_str"] = "Tespit edilemedi!"
+	# 	if result[0][0] == 1:
+	# 		data["class_str"] = "Lale"
+	# 	elif result[0][0] == 0:
+	# 		data["class_str"] = "Papatya"
+	# 	else:
+	# 		data["class_str"] = "Tespit edilemedi!"
 		
-	return jsonify(data)
+	# return jsonify(data)
+	return 'test'
 
 @app.route('/')
 def index():
