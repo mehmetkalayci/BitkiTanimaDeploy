@@ -42,7 +42,6 @@ def predict():
 		image = prepare_image(image, target=(150, 150))
 		# indicate that the request was a success
 		data["success"] = True
-		return 'mehmet'
 		result = model.predict(image)
 		
 		data["class"] = str(result[0][0])
